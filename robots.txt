@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stake-bnb.github.io/sitemap.xml

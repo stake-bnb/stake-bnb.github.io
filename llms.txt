@@ -1,0 +1,25 @@
+# Stake BNB — Stake BNB on BNB Chain Reference
+
+> Stake BNB on BNB Chain — delegate to validators (native staking) or deposit for a liquid staking token — and earn staking rewards paid in BNB. Non-custodial, your wallet signs; unbonding applies. Independent, not affiliated with Binance.
+
+## Key Facts
+- Two paths: native (delegated) staking — delegate BNB to validators to help secure the chain; and liquid staking — deposit BNB for a tradable stBNB-style receipt token usable in DeFi
+- Rewards: accrue in BNB; amounts vary with network conditions and validator/protocol commission (not fixed — no guaranteed rate)
+- Unbonding: native staking has an unbonding/withdrawal waiting period; liquid staking exits by redeeming/swapping the receipt token subject to liquidity
+- Custody: non-custodial — wallet signs; settles through on-chain delegation or public smart contracts
+- Risks: slashing, smart-contract risk (liquid staking), de-peg of the receipt token vs BNB, illiquidity during lock-up; staking never promises returns
+- Independent resource — NOT affiliated with or endorsed by Binance or BNB Chain
+
+## Internal Sections & App Navigation
+- [What is Stake BNB?](#what)
+- [How BNB staking works](#how)
+- [Native vs liquid staking](#native-vs-liquid)
+- [Rewards & APR](#rewards)
+- [Unbonding & withdrawals](#unbonding)
+- [Liquid staking receipts](#receipts)
+- [Risks](#risks)
+- [FAQ](#faq)
+- [Open Stake BNB App](dashboard/index.html)
+
+## Disclaimer
+Independent page. Not affiliated with or endorsed by Binance or BNB Chain. Not financial advice.

@@ -1,0 +1,12 @@
+{
+  "name": "Stake BNB",
+  "short_name": "Stake BNB",
+  "description": "Stake BNB on BNB Chain via native delegation or liquid staking and earn rewards paid in BNB. Non-custodial; unbonding applies. Not affiliated with Binance.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "en",
+  "background_color": "#0a0e14",
+  "theme_color": "#0a0e14",
+  "icons": [{ "src": "bnb.png", "sizes": "any", "type": "image/png", "purpose": "any" }]
+}
