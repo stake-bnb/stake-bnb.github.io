@@ -1,297 +1,285 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stake BNB — Delegated Validator Staking on BNB Chain</title>
-  <meta name="description" content="Stake BNB by delegating to a BNB Chain validator and earning a share of block rewards. Compare APR, unbonding time and the slisBNB liquid alternative, then estimate rewards with the calculator.">
-  <link rel="canonical" href="https://stake-bnb.github.io/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Stake BNB">
-  <meta property="og:description" content="Stake BNB by delegating to a BNB Chain validator and earning a share of block rewards. Compare APR, unbonding time and the slisBNB liquid alternative, then estimate rewards with the calculator.">
-  <meta property="og:url" content="https://stake-bnb.github.io/">
-  <meta property="og:image" content="https://stake-bnb.github.io/og.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Stake BNB">
-  <meta name="twitter:description" content="Stake BNB by delegating to a BNB Chain validator and earning a share of block rewards. Compare APR, unbonding time and the slisBNB liquid alternative, then estimate rewards with the calculator.">
-  <meta name="twitter:image" content="https://stake-bnb.github.io/og.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://stake-bnb.github.io/#website", "url": "https://stake-bnb.github.io/", "name": "Stake BNB — Delegated Validator Staking on BNB Chain"}, {"@type": "WebPage", "@id": "https://stake-bnb.github.io/#webpage", "url": "https://stake-bnb.github.io/", "name": "Stake BNB — Delegated Validator Staking on BNB Chain", "isPartOf": {"@id": "https://stake-bnb.github.io/#website"}, "description": "Stake BNB by delegating to a BNB Chain validator and earning a share of block rewards. Compare APR, unbonding time and the slisBNB liquid alternative, then estimate rewards with the calculator.", "datePublished": "2026-11-05", "dateModified": "2026-11-05"}, {"@type": "SoftwareApplication", "name": "Stake BNB", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stake-bnb.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Staking"}, {"@type": "ListItem", "position": 3, "name": "Stake BNB"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it mean to stake BNB?", "acceptedAnswer": {"@type": "Answer", "text": "It means delegating your BNB to a validator on BNB Chain so the network can count it toward consensus, in exchange for a share of that validator's block rewards. Your BNB stays under your own control the entire time; delegation is a signed instruction, not a transfer of custody."}}, {"@type": "Question", "name": "How much can I earn when I stake BNB?", "acceptedAnswer": {"@type": "Answer", "text": "APR typically runs around 2%–4%, depending on the validator's commission and how actively it is producing blocks. Use the rewards calculator with your amount, the validator's current APY, and your intended period to get a specific estimate."}}, {"@type": "Question", "name": "How long does unbonding take after I stake BNB?", "acceptedAnswer": {"@type": "Answer", "text": "BNB Chain enforces an unbonding period of roughly seven days between requesting to unstake and the BNB becoming withdrawable. During that window the tokens are locked and no longer earning rewards."}}, {"@type": "Question", "name": "What is slisBNB and how is it different from direct delegation?", "acceptedAnswer": {"@type": "Answer", "text": "slisBNB is a liquid staking receipt token minted when you deposit BNB into a liquid staking protocol. It represents your staked position and accrues rewards automatically, but unlike direct delegation it can be traded or used in DeFi without waiting out the unbonding period."}}, {"@type": "Question", "name": "Is it safer to stake BNB directly or through an exchange?", "acceptedAnswer": {"@type": "Answer", "text": "Direct delegation keeps your BNB in your own wallet and lets you choose and verify the validator yourself. Exchange staking is more convenient but puts your BNB in the exchange's custody and ties your returns to its own validator choices and withdrawal rules."}}, {"@type": "Question", "name": "Can I lose my BNB if a validator is slashed?", "acceptedAnswer": {"@type": "Answer", "text": "Under normal delegated staking your principal is not typically seized, but a slashed or offline validator can reduce the rewards available to its delegators. Checking a validator's uptime history before delegating lowers this risk."}}, {"@type": "Question", "name": "Can I change validators after I stake BNB?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can unstake from one validator and, after the unbonding period, delegate the same BNB to a different validator. Some interfaces also support re-delegating directly without a full unbonding cycle."}}]}]}</script>
-  <style>
-    :root{--bg:#FBFCFE;--surface:#FFFFFF;--text:#101624;--muted:#5B6472;--accent:#2563EB;--accent-ink:#FFFFFF;--radius:14px;--display:"Lexend";--body:"Inter"}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:2rem}
-    body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
-    a{color:var(--accent);text-underline-offset:.22em}
-    a:hover{text-decoration-thickness:2px}
-    :focus-visible{outline:3px solid var(--accent);outline-offset:5px}
-    ::selection{background:var(--accent);color:var(--accent-ink)}
-    h1,h2,h3,p{margin:0}
-    h1,h2,h3{font-family:var(--display);text-wrap:balance}
-    svg{display:block;flex-shrink:0}
-    img{max-width:100%;height:auto}
-    .ce83a46{width:min(1180px,calc(100% - 64px));margin-inline:auto}
-    .c40aeab{position:absolute;top:1rem;left:1rem;z-index:10;transform:translateY(-200%);padding:.7rem 1rem;background:var(--surface);border-radius:var(--radius)}
-    .c40aeab:focus{transform:translateY(0)}
-    .c08bf39{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-    .c0cca87{display:inline-flex;align-items:center;gap:.7rem;color:var(--text);font:600 1.2rem/1 var(--display);letter-spacing:-.04em;text-decoration:none}
-    .c3ec5bd{display:grid;place-items:center;width:38px;height:38px;background:var(--accent);color:var(--accent-ink);border-radius:var(--radius)}
-    .c896397{display:flex;align-items:center;gap:1.8rem}
-    .c896397>a{font-size:.88rem;font-weight:600;color:var(--text);text-decoration:none}
-    .c896397>a:hover{color:var(--accent)}
-    .c896397 .c960f0b{padding:.65rem 1rem;border:1px solid color-mix(in srgb,var(--text) 18%,transparent);border-radius:var(--radius)}
-    .ce0a81c{padding-top:1.6rem;font-size:.8rem;color:var(--muted)}
-    .c64b3c1{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;color:var(--muted)}
-    ol.c64b3c1,ul.c64b3c1,.c64b3c1 ol,.c64b3c1 ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
-    .c64b3c1 a{color:var(--muted);text-decoration:none}
-    .c64b3c1 a:hover{color:var(--accent)}
-    .c64b3c1 [aria-current]{color:var(--text)}
-    .c92fe3e{position:relative;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:start;gap:clamp(1.75rem,5vw,4rem);padding-block:2.25rem 3.5rem}
-    .c255435{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.35rem;color:var(--accent);font-size:.86rem;font-weight:600}
-    .c255435::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 10%,transparent)}
-    h1{font-size:clamp(2.5rem,4.8vw,4.7rem);line-height:1.06;letter-spacing:-.055em;overflow-wrap:anywhere}
-    h1 em{color:var(--accent);font-style:normal}
-    .c9daaa1{margin-top:1.5rem;max-width:49ch;font-size:1.06rem;line-height:1.85;color:var(--muted)}
-    .ca505e0{display:inline-flex;justify-content:center;align-items:center;gap:1.15rem;min-height:54px;padding:.9rem 1.4rem;border:1px solid color-mix(in srgb,var(--accent-ink) 12%,transparent);border-radius:var(--radius);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 88%,var(--surface)),var(--accent));box-shadow:0 8px 20px color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent-ink);font:600 .95rem/1.4 var(--body);text-decoration:none;transition:transform .2s,box-shadow .2s}
-    .ca505e0:hover{transform:translateY(-2px);box-shadow:0 12px 26px color-mix(in srgb,var(--accent) 26%,transparent)}
-    .c12027c>.ca505e0{margin-top:2rem}
-    .c320ebf{margin-top:1.1rem;color:var(--muted);font-size:.8rem}
-    .c2955c7{position:relative;isolation:isolate;min-width:0;padding:1.25rem;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:calc(var(--radius) * 1.5);box-shadow:0 28px 70px -20px color-mix(in srgb,var(--text) 19%,transparent),0 3px 10px color-mix(in srgb,var(--text) 4%,transparent)}
-    .c2955c7::before{content:"";position:absolute;inset:-28px;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 80% 20%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 68%);border-radius:calc(var(--radius) * 2)}
-    .cb4004a{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.9rem}
-    .cb4004a h2{font-size:1.15rem;letter-spacing:-.035em}
-    .cb85983{padding:.25rem .65rem;border-radius:var(--radius);background:color-mix(in srgb,var(--accent) 10%,var(--surface));color:var(--accent);font-size:.72rem;font-weight:600}
-    .c837b7d{display:grid;grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);align-items:center;gap:.6rem;padding:.65rem .8rem;border:1px solid color-mix(in srgb,var(--text) 9%,transparent);border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 65%,var(--surface))}
-    .cbacbdb{min-width:0;display:flex;align-items:center;gap:.7rem}
-    .cbacbdb:last-child{justify-content:flex-end}
-    .ce89932{font-size:.76rem;color:var(--muted)}
-    .cdf733d{min-width:0;display:flex;align-items:center;justify-content:center;max-width:100px;min-height:38px;overflow-wrap:anywhere}
-    .cdf733d img,.cdf733d svg{max-width:100%;max-height:38px;object-fit:contain}
-    .route-arrow{display:grid;place-items:center;width:34px;height:34px;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:50%;color:var(--accent);background:var(--surface)}
-    .ca6b313{margin-top:.9rem}
-    .c44c47b{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.55rem}
-    .c44c47b label{font-size:.85rem;font-weight:600}
-    .c61ff99{font-size:.74rem;color:var(--muted)}
-    .cb5ee60{display:flex;align-items:center;gap:.8rem;padding:.55rem .85rem;border:1px solid color-mix(in srgb,var(--text) 20%,transparent);border-radius:var(--radius);background:var(--bg);transition:border-color .2s,box-shadow .2s}
-    .cb5ee60:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
-    .cb5ee60:has([aria-invalid="true"]){border-color:var(--accent)}
-    .cb5ee60 input{width:100%;min-width:0;padding:0;border:0;outline:none;background:var(--bg);color:var(--text);font:500 1.55rem/1.2 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
-    .cb5ee60 input::placeholder{color:var(--muted)}
-    .cb5ee60>span{font-size:.8rem;color:var(--muted)}
-    .cdd95ee{min-height:1.4em;margin-top:.5rem;font-size:.73rem;color:var(--muted)}
-    .c1a48ca{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.8rem}
-    .c1a48ca .ca6b313{margin-top:0}
-    .ccb5a09{position:relative}
-    .ccb5a09::after{content:"";position:absolute;right:.95rem;top:50%;width:.5rem;height:.5rem;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-70%) rotate(45deg);pointer-events:none}
-    .cd01413{width:100%;padding:.55rem 2rem .55rem .85rem;border:1px solid color-mix(in srgb,var(--text) 20%,transparent);border-radius:var(--radius);background:var(--bg);color:var(--text);font:500 1rem/1.3 var(--display);letter-spacing:-.02em;appearance:none;-webkit-appearance:none;cursor:pointer}
-    .cd01413:focus-visible{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
-    .cd968a8{margin-top:1rem;padding:.95rem;border:1px solid color-mix(in srgb,var(--accent) 17%,transparent);border-radius:var(--radius);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,var(--surface)),color-mix(in srgb,var(--accent) 3%,var(--surface)))}
-    .ce3f94d{font-size:.8rem;color:var(--muted)}
-    .ce9cd68{display:flex;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin:.2rem 0 .7rem}
-    .ce9cd68 output{font:600 clamp(1.5rem,2.4vw,2.05rem)/1.15 var(--display);letter-spacing:-.05em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
-    .ce9cd68 span{font-size:.8rem;color:var(--muted)}
-    .c4fe873{display:grid;gap:.4rem;margin:0;padding-top:.7rem;border-top:1px solid color-mix(in srgb,var(--accent) 14%,transparent);font-size:.82rem}
-    .c4fe873>div{display:flex;justify-content:space-between;gap:1rem}
-    .c4fe873 dt{color:var(--muted)}
-    .c4fe873 dd{margin:0;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
-    .c2955c7>.ca505e0{width:100%;margin-top:1.2rem}
-    .ccfa895{margin-top:1rem;font-size:.75rem;color:var(--muted)}
-    .ccfa895 summary{cursor:pointer;width:fit-content;text-underline-offset:.2em}
-    .ccfa895 summary:hover{color:var(--accent)}
-    .ccfa895 p{margin-top:.55rem;line-height:1.7}
-    .c9a100d{padding:2rem 2.25rem;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius);background:var(--surface)}
-    .c0ff358{font:600 1.4rem/1.3 var(--display);letter-spacing:-.035em;margin-bottom:1.25rem}
-    .c3711ba{overflow-x:auto}
-    .c6cf53d{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}
-    .c6cf53d caption{text-align:left;margin-bottom:1rem;color:var(--muted)}
-    .c6cf53d th,.c6cf53d td{padding:1rem 1.2rem;border-bottom:1px solid color-mix(in srgb,var(--text) 8%,transparent);vertical-align:top}
-    .c6cf53d th:first-child,.c6cf53d td:first-child{padding-left:0}
-    .c6cf53d th:last-child,.c6cf53d td:last-child{padding-right:0}
-    .c6cf53d th{font-weight:600;color:var(--text)}
-    .c6cf53d td{color:var(--muted)}
-    .c6cf53d tbody tr:last-child>*{border-bottom:0}
-    .c6cf53d thead{background:color-mix(in srgb,var(--accent) 5%,var(--surface))}
-    .ccaf603{max-width:820px;margin:4.5rem auto}
-    .c54f0bc{margin-block:0 3rem;padding-bottom:2.75rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-    .ca1e035{margin:0 0 1.2rem;font:600 clamp(1.65rem,3vw,2.25rem)/1.2 var(--display);letter-spacing:-.04em}
-    .c83e27b{color:var(--muted);line-height:1.9;overflow-wrap:anywhere}
-    .c83e27b p+p{margin-top:1.1rem}
-    .c83e27b h3{margin:1.8rem 0 .7rem;font-size:1.25rem;line-height:1.4;color:var(--text)}
-    .c83e27b strong{color:var(--text);font-weight:600}
-    .c83e27b ul,.c83e27b ol{padding-left:1.4rem;margin-block:1.2rem}
-    .c83e27b li+li{margin-top:.55rem}
-    .c83e27b li::marker{color:var(--accent)}
-    .c83e27b blockquote{margin:1.5rem 0;padding:1rem 1.4rem;border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;background:color-mix(in srgb,var(--accent) 6%,var(--surface));color:var(--text)}
-    .c3069f6{margin-block:.8rem;border:1px solid color-mix(in srgb,var(--text) 12%,transparent);border-radius:var(--radius);background:var(--surface);overflow:hidden}
-    .c19e0f9{position:relative;cursor:pointer;padding:1.2rem 3.3rem 1.2rem 1.35rem;list-style:none;font:500 1.05rem/1.5 var(--display);color:var(--text)}
-    .c19e0f9::-webkit-details-marker{display:none}
-    .c19e0f9::after{content:"+";position:absolute;right:1.35rem;top:1.15rem;color:var(--accent);font-size:1.3rem}
-    .c3069f6[open]>.c19e0f9::after{content:"−"}
-    .c3069f6[open]{border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
-    .c19e0f9:focus-visible{outline-offset:-5px;border-radius:var(--radius)}
-    .cd59b5f{padding:0 1.35rem 1.35rem;color:var(--muted);font-size:.95rem;line-height:1.85;overflow-wrap:anywhere}
-    .cd59b5f p+p{margin-top:.8rem}
-    .c1be7a5{padding:2rem 2.25rem;border-radius:var(--radius);background:color-mix(in srgb,var(--surface) 75%,var(--bg));border:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
-    .c2a5a0b{margin:0;padding-left:1.2rem;color:var(--muted);font-size:.86rem}
-    .ca4cde4{padding:.35rem 0 .35rem .3rem;overflow-wrap:anywhere}
-    .ca4cde4::marker{color:var(--muted)}
-    .ca4cde4 a{color:var(--text);text-decoration-color:color-mix(in srgb,var(--accent) 45%,transparent)}
-    .ca4cde4 a:hover{color:var(--accent)}
-    .ccb5edb{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:3rem;padding-block:1.7rem 2rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);color:var(--muted);font-size:.78rem}
-    .cde5ca3{font:600 .95rem/1.4 var(--display);color:var(--text)}
-    @media(min-width:1400px){.c92fe3e{padding-block:2.75rem 4rem}}
-    @media(max-width:900px){.c92fe3e{gap:2rem;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.c2955c7{padding:1.25rem}.c837b7d{padding:.8rem}.cbacbdb{flex-direction:column;gap:.25rem}.cbacbdb:last-child{flex-direction:column-reverse}h1{font-size:clamp(2.5rem,5.5vw,4rem)}}
-    @media(max-width:720px){.ce83a46{width:calc(100% - 40px)}.c08bf39{min-height:78px;gap:1rem}.c896397{gap:1rem}.c896397>.c309c3b{display:none}.c92fe3e{grid-template-columns:minmax(0,1fr);padding-block:2.75rem 3rem;gap:2.5rem}.c12027c{max-width:560px}h1{font-size:clamp(2.6rem,9vw,4rem)}.c9daaa1{font-size:1rem}.c2955c7{width:100%;max-width:520px;justify-self:center;padding:1.5rem}.cbacbdb,.cbacbdb:last-child{flex-direction:row}.c9a100d,.c1be7a5{padding:1.5rem}.ccaf603{margin-block:3rem}.c6cf53d th,.c6cf53d td{padding:.85rem .75rem}.c54f0bc{margin-bottom:2rem;padding-bottom:2rem}.ccb5edb{margin-top:2rem}}
-    @media(max-width:380px){.ce83a46{width:calc(100% - 28px)}.c2955c7{padding:1rem}.c0cca87{font-size:1.05rem}.c896397 .c960f0b{padding:.55rem .7rem}.cbacbdb,.cbacbdb:last-child{flex-direction:column}.cbacbdb:last-child{flex-direction:column-reverse}.c9a100d,.c1be7a5{padding:1.1rem}.c4fe873{font-size:.76rem}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
-  </style>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stake BNB — delegate BNB to a validator on BNB Chain</title>
+<meta name="description" content="Stake BNB on BNB Smart Chain by delegating to a validator from your own wallet. Non-custodial interface for BNB holders; you sign every transaction.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0f0e0b">
+<link rel="canonical" href="https://stake-bnb.github.io/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Stake BNB"><meta property="og:title" content="Stake BNB — delegate BNB to a validator on BNB Chain"><meta property="og:description" content="Stake BNB on BNB Smart Chain by delegating to a validator from your own wallet. Non-custodial interface for BNB holders; you sign every transaction."><meta property="og:url" content="https://stake-bnb.github.io/"><meta property="og:image" content="https://stake-bnb.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Stake BNB — delegate BNB to a validator on BNB Chain"><meta name="twitter:description" content="Stake BNB on BNB Smart Chain by delegating to a validator from your own wallet. Non-custodial interface for BNB holders; you sign every transaction."><meta name="twitter:image" content="https://stake-bnb.github.io/og-image.png">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://stake-bnb.github.io/#organization","name":"Stake BNB","url":"https://stake-bnb.github.io/","description":"Stake BNB on BNB Smart Chain by delegating to a validator from your own wallet. Non-custodial interface for BNB holders; you sign every transaction.","logo":{"@type":"ImageObject","@id":"https://stake-bnb.github.io/#logo","url":"https://stake-bnb.github.io/icon.svg","caption":"Stake BNB"}},{"@type":"WebSite","@id":"https://stake-bnb.github.io/#website","url":"https://stake-bnb.github.io/","publisher":{"@id":"https://stake-bnb.github.io/#organization"},"name":"Stake BNB"},{"@type":"WebPage","@id":"https://stake-bnb.github.io/#webpage","url":"https://stake-bnb.github.io/","publisher":{"@id":"https://stake-bnb.github.io/#organization"},"name":"Stake BNB — delegate BNB to a validator on BNB Chain","isPartOf":{"@id":"https://stake-bnb.github.io/#website"},"mainEntity":{"@id":"https://stake-bnb.github.io/#app"},"breadcrumb":{"@id":"https://stake-bnb.github.io/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://stake-bnb.github.io/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://stake-bnb.github.io/"},{"@type":"ListItem","position":2,"name":"Stake BNB","item":"https://stake-bnb.github.io/"}]},{"@type":"WebApplication","@id":"https://stake-bnb.github.io/#app","url":"https://stake-bnb.github.io/","publisher":{"@id":"https://stake-bnb.github.io/#organization"},"name":"Stake BNB","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Stake BNB on BNB Smart Chain by delegating to a validator from your own wallet. Non-custodial interface for BNB holders; you sign every transaction.","isPartOf":{"@id":"https://stake-bnb.github.io/#website"}},{"@type":"FAQPage","@id":"https://stake-bnb.github.io/#faq","isPartOf":{"@id":"https://stake-bnb.github.io/#webpage"},"about":{"@id":"https://stake-bnb.github.io/#app"},"name":"Stake BNB FAQ","mainEntity":[{"@type":"Question","name":"How do I stake BNB?","acceptedAnswer":{"@type":"Answer","text":"Connect a wallet on BNB Smart Chain, choose a validator, enter an amount and sign the delegation. You receive validator-specific stake credit tokens that represent your share."}},{"@type":"Question","name":"Do I get rewards for staking BNB?","acceptedAnswer":{"@type":"Answer","text":"Rewards accrue to the stake while it is delegated, after the validator takes its commission. Amounts vary with the validator and the network, and none are guaranteed."}},{"@type":"Question","name":"How long does it take to unstake BNB?","acceptedAnswer":{"@type":"Answer","text":"Undelegating starts an unbonding period of about 7 days. After it ends you can claim your BNB back to your wallet."}},{"@type":"Question","name":"What are stake credit tokens?","acceptedAnswer":{"@type":"Answer","text":"They are tokens you receive when you delegate, and they represent your share of a specific validator\u0027s stake. They are tied to that validator, so they are not the same as a generic liquid staking token."}},{"@type":"Question","name":"Can I lose BNB by staking?","acceptedAnswer":{"@type":"Answer","text":"Yes, in some cases. If a validator misbehaves, slashing can affect delegators too, so check the validator before you delegate. Smart contract risk also applies."}},{"@type":"Question","name":"Which fees apply when I stake BNB?","acceptedAnswer":{"@type":"Answer","text":"You pay gas in BNB for each transaction, and the validator charges a commission on rewards. This interface does not hold your funds."}}]}]}
+</script>
+<style>
+@font-face{font-family:'Inter';src:url('assets/inter.woff2') format('woff2');font-weight:400 700;font-display:swap}
+@font-face{font-family:'Space Grotesk';src:url('assets/space-grotesk.woff2') format('woff2');font-weight:500 700;font-display:swap}
+:root{
+ --bg:#0f0e0b;--card:#191813;--ink:#f5f2e8;--muted:#9a96a3;--faint:#5f5c68;
+ --line:#26241c;--line-2:#302d23;--panel:#1f1d17;--panel-2:#29271f;
+ --accent:#f0b90b;--accent-hover:#d9a708;--accent-ink:#f3c94a;--accent-soft:#3a3110;--accent-on:#1a1504;--promo:#221e0f;--text-2:#c7c4cd;
+ --shadow:0 1px 0 rgba(255,255,255,.04) inset,0 24px 56px -32px rgba(0,0,0,.7);--pico-bg:#29271f;--pico-ring:rgba(255,255,255,.08);
+ --ease:cubic-bezier(.2,.7,.2,1);
+ --head:"Space Grotesk","Arial",sans-serif;--body:"Inter","Arial",sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;color:var(--ink);font:15px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;background:var(--bg)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(240,185,11,.14),transparent 70%),radial-gradient(rgba(240,185,11,.06) 1px,transparent 1.6px) 0 0/20px 20px;-webkit-mask-image:linear-gradient(#000 0,rgba(0,0,0,.35) 60%,transparent 100%);mask-image:linear-gradient(#000 0,rgba(0,0,0,.35) 60%,transparent 100%)}
+a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer;background:none;border:0;color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;font-family:var(--head);font-weight:500;letter-spacing:-.01em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+
+.nav{display:flex;align-items:center;gap:24px;padding:16px 24px;max-width:1280px;margin:0 auto;width:100%}
+.brand{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-weight:500;font-size:20px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;flex:0 0 auto}
+.brand img{width:28px;height:28px}
+.nlinks{display:flex;align-items:center;gap:20px}
+.nlinks a{font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap;transition:color .16s var(--ease)}
+.nlinks a:hover{color:var(--ink)}
+.spacer{flex:1}
+main{flex:1}
+.chain{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 12px;border-radius:10px;background:var(--panel-2);font-weight:500;font-size:14px;color:var(--ink);transition:background-color .16s var(--ease);flex:0 0 auto;white-space:nowrap}
+.chain img{width:20px;height:20px;border-radius:50%}
+.chain:hover{background:var(--line-2)}
+.chain .cv{width:12px;height:12px;color:var(--muted)}
+.connect{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:10px;background:var(--card);border:1px solid var(--line-2);color:var(--ink);font-weight:500;font-size:14px;transition:background-color .16s var(--ease),border-color .16s var(--ease);flex:0 0 auto;white-space:nowrap}
+.connect:hover{border-color:var(--faint);background:var(--panel)}
+
+.hero{display:flex;flex-direction:column;align-items:center;padding:32px 20px 48px}
+h1{font-size:clamp(36px,4.6vw,48px);line-height:1.08;letter-spacing:-.025em;text-align:center;color:var(--ink);margin:0 0 32px}
+
+.card{width:min(600px,100%);background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.tabs{display:flex;align-items:center;gap:4px;padding:20px 20px 16px}
+.tab{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:10px;font-weight:500;font-size:14px;color:var(--muted);transition:background-color .16s var(--ease),color .16s var(--ease)}
+.tab:hover{background:var(--panel-2);color:var(--ink)}
+.tab.on{background:var(--accent-soft);color:var(--accent-ink)}
+.tabs .sp{flex:1}
+.tabs .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--muted);transition:background-color .16s var(--ease),color .16s var(--ease)}
+.tabs .ic:hover{background:var(--panel-2);color:var(--ink)}
+.tabs .ic svg{width:18px;height:18px}
+
+.promo{margin:0 20px;padding:32px;border-radius:12px;background:var(--promo);display:flex;align-items:center;gap:20px}
+.promo-txt{flex:1;min-width:0}
+.promo-h{font-family:var(--head);font-weight:500;font-size:clamp(22px,3.4vw,28px);line-height:1.2;letter-spacing:-.015em;color:var(--ink);margin:0 0 8px;text-wrap:balance}
+.promo-sub{font-size:15px;line-height:1.6;color:var(--text-2);margin:0;max-width:34ch}
+.promo-grid{flex:0 0 auto;display:grid;grid-template-columns:repeat(2,auto);gap:16px}
+.pico{width:52px;height:52px;border-radius:50%;background:var(--pico-bg);box-shadow:0 0 0 1px var(--pico-ring);display:grid;place-items:center;overflow:hidden}
+.pico img{width:100%;height:100%;object-fit:contain;display:block}
+.promo-flow{flex-direction:column;align-items:stretch;gap:24px}
+.promo-flow .promo-sub{max-width:44ch}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.flow li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+.flow li+li::before{content:"";position:absolute;top:22px;right:calc(50% + 30px);width:calc(100% - 52px);height:1px;background:var(--line-2)}
+.fi{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:var(--pico-bg);box-shadow:0 0 0 1px var(--pico-ring);color:var(--accent-ink)}
+.fi img{width:100%;height:100%;display:block}
+.fi svg{width:20px;height:20px}
+.fi.on{background:var(--accent);color:var(--accent-on);box-shadow:none}
+.flow b{margin-top:4px;font-weight:500;font-size:14px;color:var(--ink)}
+.flow small{font-size:13px;line-height:1.4;color:var(--muted)}
+.cta-wrap{padding:20px}
+.cta{width:100%;height:60px;border-radius:12px;background:var(--accent);color:var(--accent-on);font-weight:500;font-size:16px;transition:background-color .16s var(--ease),transform .12s var(--ease)}
+.cta:hover{background:var(--accent-hover)}
+.cta:active{transform:scale(.99)}
+@media(max-width:470px){.promo{flex-direction:column;align-items:flex-start}.promo-grid{grid-template-columns:repeat(4,auto)}.promo-sub{max-width:none}}
+
+.learn{max-width:720px;margin:48px auto 0;width:100%;padding:0 24px 72px}
+.learn-h{font-size:14px;font-weight:500;color:var(--muted);text-align:center;margin:0 0 12px}
+.lrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:flex-start}
+.lcard{flex:0 0 auto;background:transparent;border:1px solid var(--line-2);border-radius:10px;transition:background-color .16s var(--ease),border-color .16s var(--ease)}
+.lcard>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;font-weight:500;font-size:14px;color:var(--text-2)}
+.lcard>summary::-webkit-details-marker{display:none}
+.lcard:hover{border-color:var(--faint);background:var(--card)}.lcard:hover>summary{color:var(--ink)}
+.lcard .chev{width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);margin-top:-4px;flex-shrink:0;transition:transform .16s var(--ease)}
+.lcard[open]{order:9;flex:0 0 100%;min-width:0;background:var(--card);border-color:var(--line-2);border-radius:16px;margin-top:8px}
+.lcard[open]>summary{height:auto;padding:20px 24px 0;color:var(--muted);font-size:13px}
+.lcard[open] .chev{transform:rotate(225deg);margin-top:4px}
+.lbody{padding:4px 24px 24px;max-width:660px}
+.lbody h2{font-size:22px;line-height:1.3;color:var(--ink);margin:8px 0 4px}
+.lbody h3{font-size:15px;line-height:1.4;color:var(--ink);margin:20px 0 4px}
+.lbody p{margin:0;font-size:15px;line-height:1.7;color:var(--text-2)}
+.lbody p+p{margin-top:8px}
+.lbody ul,.lbody ol{margin:8px 0 0;padding-left:20px}
+.lbody li{font-size:15px;line-height:1.7;color:var(--text-2);margin-bottom:4px}
+.lbody a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px}
+.lbody strong,.lbody b{color:var(--ink);font-weight:500}
+.lbody .tbl{overflow-x:auto;margin:16px 0 4px}
+.lbody table{width:100%;min-width:420px;border-collapse:collapse;font-size:14px}
+.lbody caption{text-align:left;color:var(--muted);font-size:13px;margin-bottom:8px}
+.lbody th,.lbody td{text-align:left;padding:8px 12px;border:1px solid var(--line-2);vertical-align:top;line-height:1.45}
+.lbody thead th{background:var(--panel);color:var(--ink);font-weight:500}
+.lbody tbody th{background:var(--panel);color:var(--muted);white-space:nowrap;font-weight:500}
+.lbody td{color:var(--text-2)}
+.lfaq h3{margin-top:16px;font-size:16px}
+
+footer{border-top:1px solid var(--line-2);background:var(--card)}
+.foot{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:20px 24px 24px;color:var(--muted);font-size:13px}
+.foot a{color:var(--muted);transition:color .16s var(--ease)}.foot a:hover{color:var(--ink)}.foot .sep{color:var(--faint)}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,8px);background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 16px;font-size:13px;box-shadow:0 16px 40px -16px rgba(13,17,28,.5);z-index:60;opacity:0;visibility:hidden;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+
+@media(max-width:1120px){.nlinks{display:none}}
+@media(max-width:720px){.chain span{display:none}.chain{padding:0 8px;gap:4px}}
+@media(max-width:560px){
+  .nav{padding:12px 16px;gap:8px}
+  .brand{font-size:16px}
+  .brand img{width:24px;height:24px}
+  .chain{height:36px;padding:0 8px;gap:4px}
+  .chain span{display:none}
+  .connect{height:36px;padding:0 12px;font-size:13px}
+  .hero{padding:24px 16px 40px}
+  .tabs{padding:16px 16px 12px}.promo{margin:0 16px;padding:24px}.cta-wrap{padding:16px}.cta{height:56px}
+  .learn{margin-top:40px;padding:0 16px 56px}
+}
+</style>
+<link rel="prerender" href="/dashboard/">
+<link rel="prefetch" href="/dashboard/" as="document">
+<link rel="preload" href="/dashboard/" as="document">
 </head>
 <body>
-  <a class="c40aeab" href="#content">Skip to content</a>
-  <div class="ce83a46">
-    <nav class="c08bf39" aria-label="Primary navigation">
-      <a class="c0cca87" href="#" aria-label="Staking guide home">
-        <span class="c3ec5bd" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M5 19V11a7 7 0 0 1 14 0v8M9 19v-8a3 3 0 0 1 6 0v8" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-        Staking guide
-      </a>
-      <div class="c896397">
-        <a class="c309c3b" href="#key-facts">Key facts</a>
-        <a class="c309c3b" href="#sources">Sources</a>
-        <a class="c960f0b" href="dashboard/">Stake <span aria-hidden="true">↗</span></a>
-      </div>
-    </nav>
-    <div class="ce0a81c"><nav class="c64b3c1" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Staking</span> <span>/</span> <span>Stake BNB</span></nav></div>
-    <section class="c92fe3e" aria-labelledby="hero-heading">
-      <div class="c12027c">
-        <span class="c255435">Staking calculator</span>
-        <h1 id="hero-heading">Stake <em>BNB</em>.</h1>
-        <p class="c9daaa1">To Stake BNB is to delegate your tokens to a validator on BNB Chain so the network can use them for consensus while you collect a share of the rewards that validator earns. You pick the amount, pick a validator, and estimate what delegation should return over a chosen period with the rewards calculator below before you commit anything. Your BNB never leaves your own wallet's control — delegation is a signed instruction, not a transfer of custody — and you can unstake at any time, subject to the network's unbonding period.</p>
-        <a class="ca505e0" href="dashboard/">Stake <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <p class="c320ebf">Set the amount and APY. Pick a period. See the rewards.</p>
-      </div>
-      <aside class="c2955c7" aria-labelledby="calculator-heading">
-        <div class="cb4004a">
-          <h2 id="calculator-heading">Your staking rewards</h2>
-          <span class="cb85983">Rewards</span>
-        </div>
-        <div class="c837b7d" aria-label="Staked asset">
-          <div class="cbacbdb"><span class="cdf733d"><img src="assets/tokens/bnb.svg" alt="BNB" width="28" height="28"></span><span class="ce89932">Staked asset</span></div>
-        </div>
-        <div class="ca6b313">
-          <div class="c44c47b"><label for="amount">Amount staked</label><span class="c61ff99">Your deposit</span></div>
-          <div class="cb5ee60"><input id="amount" type="text" inputmode="decimal" value="1000" autocomplete="off" spellcheck="false" maxlength="24" aria-describedby="amount-help" aria-invalid="false"><span>units</span></div>
-          <p id="amount-help" class="cdd95ee">Enter an amount from 1 to 1,000,000 units.</p>
-        </div>
-        <div class="c1a48ca">
-          <div class="ca6b313">
-            <div class="c44c47b"><label for="apy">APY</label><span class="c61ff99">Annual %</span></div>
-            <div class="cb5ee60"><input id="apy" type="text" inputmode="decimal" value="5" autocomplete="off" spellcheck="false" maxlength="6" aria-describedby="apy-help" aria-invalid="false"><span>%</span></div>
-          </div>
-          <div class="ca6b313">
-            <div class="c44c47b"><label for="period">Period</label><span class="c61ff99">Horizon</span></div>
-            <div class="ccb5a09"><select id="period" class="cd01413"><option value="0.0833">1 month</option><option value="0.5">6 months</option><option value="1" selected>1 year</option><option value="3">3 years</option></select></div>
-          </div>
-        </div>
-        <p id="apy-help" class="cdd95ee">Rewards compound monthly at the APY you enter.</p>
-        <div class="cd968a8" aria-live="polite" aria-atomic="true">
-          <p class="ce3f94d">Estimated rewards</p>
-          <div class="ce9cd68"><output id="received" for="amount">51.16</output><span>units</span></div>
-          <dl class="c4fe873">
-            <div><dt>Balance at end</dt><dd><output id="total" for="amount">1,051.16</output> units</dd></div>
-            <div><dt>APY used</dt><dd><output id="apyout" for="amount">5.00%</output></dd></div>
-          </dl>
-        </div>
-        <a class="ca505e0" href="dashboard/">Stake <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <details class="ccfa895">
-          <summary>How the estimate works</summary>
-          <p>Rewards compound monthly: the balance at the end equals the amount staked times (1 + APY/12) raised to the number of months in the period, and the estimated rewards are that balance minus your deposit. The APY you enter is the annual rate; actual rates vary with the network and validator.</p>
-        </details>
-        <noscript><p class="cdd95ee">Enable JavaScript to calculate a different amount.</p></noscript>
-      </aside>
-    </section>
-    <section id="key-facts" class="c9a100d" aria-labelledby="facts-heading">
-      <h2 id="facts-heading" class="c0ff358">Key facts</h2>
-      <div class="c3711ba"><table class="c6cf53d"><tbody><tr><th scope="row">Network</th><td>BNB Chain (BNB Smart Chain) — Proof of Staked Authority</td></tr>
-<tr><th scope="row">Mechanism</th><td>Delegated staking to an active validator</td></tr>
-<tr><th scope="row">Typical APR</th><td>Roughly 2%–4%, varies by validator and commission</td></tr>
-<tr><th scope="row">Unbonding period</th><td>About 7 days before unstaked BNB is withdrawable</td></tr>
-<tr><th scope="row">Liquid alternative</th><td>slisBNB — tradable receipt token for staked BNB</td></tr>
-<tr><th scope="row">Custody</th><td>Self-custody delegation — you keep your keys</td></tr></tbody></table></div>
-    </section>
-    <main id="content" class="ccaf603">
-      <section class="c54f0bc"><h2 class="ca1e035">What It Means to Stake BNB</h2><div class="c83e27b"><strong>To stake BNB means delegating your BNB tokens to a validator on BNB Chain so the network can use them toward consensus, in exchange for a share of the block rewards and fees that validator collects.</strong> Nothing is bridged or transferred to another chain — you keep your BNB on the same network, and delegation is simply a signed instruction that tells the staking contract which validator should count your balance toward its stake weight. Every delegation, reward payout and validator's uptime record is public and checkable on a block explorer such as <a href="https://bscscan.com/" rel="nofollow noopener" target="_blank">BscScan</a>, so you are never relying on a dashboard's word alone. The amount you delegate, the validator's commission rate, and how long you leave the position open all determine what you end up earning when you stake BNB.</div></section>
-<section class="c54f0bc"><h2 class="ca1e035">How to Stake BNB: Delegated Staking on BNB Chain</h2><div class="c83e27b">BNB Chain runs on a Proof of Staked Authority model, a design documented in <a href="https://docs.bnbchain.org/" rel="nofollow noopener" target="_blank">BNB Chain's own documentation</a>, where a fixed set of validators produce blocks and delegators back those validators with staked BNB rather than running infrastructure themselves. Delegating is how almost everyone who stakes BNB actually participates: you never need to run a node, only to choose who you trust to run one well.<h3>Choosing a validator</h3>Each validator sets its own commission rate and has its own uptime and slashing history, both visible on-chain. A lower commission means a larger share of rewards reaches you, but a validator with inconsistent uptime can cost more in missed rewards than its fee ever saved.<h3>How rewards accrue</h3>Rewards come from a mix of block rewards and the transaction fees the validator processes, distributed to delegators roughly in proportion to their share of that validator's total stake, usually on a daily or per-epoch basis depending on the staking interface you use.<h3>Bonding and unbonding</h3>A new delegation is active almost immediately, but unstaking is not instant: BNB Chain enforces an unbonding period of roughly seven days during which your tokens are locked and earning nothing, a deliberate delay that protects the network from rapid stake reshuffling.</div></section>
-<section class="c54f0bc"><h2 class="ca1e035">Stake BNB APR and Rewards Explained</h2><div class="c83e27b">APR when you stake BNB is not fixed the way a savings account rate is — it moves with total network stake, validator commission, and how actively a validator is producing blocks. The table below lines up the main ways to stake BNB against the return and liquidity trade-off each one carries.<table><thead><tr><th>Staking method</th><th>Typical APR range</th><th>Liquidity</th></tr></thead><tbody><tr><td>Delegated staking (direct)</td><td>~2%–4%</td><td>Locked, ~7-day unbonding</td></tr><tr><td>Liquid staking (slisBNB)</td><td>~2%–4% minus a small protocol fee</td><td>Tradable immediately</td></tr><tr><td>Exchange staking</td><td>Varies, exchange sets the rate</td><td>Depends on exchange lock-up</td></tr></tbody></table></div></section>
-<section class="c54f0bc"><h2 class="ca1e035">How to Calculate Your Stake BNB Rewards</h2><div class="c83e27b">The rewards calculator on this page takes three inputs — the amount of BNB you plan to delegate, the validator's advertised APY, and the period you intend to stay staked — and projects the BNB you should accumulate before unbonding. Because APR drifts with network conditions, treat the output as an estimate anchored to today's rate, not a locked-in guarantee, and revisit it whenever a validator changes its commission.<ul><li>Enter the amount of BNB you intend to delegate into the calculator.</li><li>Enter the validator's current advertised APY, found on its staking page or on-chain.</li><li>Choose the staking period you plan to hold the delegation for.</li><li>Review the projected reward and the amount you would have after the unbonding period.</li><li>Confirm the validator's commission is already reflected in the APY before you delegate.</li><li>Delegate the amount from your wallet and track accrual on a block explorer.</li></ul></div></section>
-<section class="c54f0bc"><h2 class="ca1e035">Choosing a Validator to Stake BNB With</h2><div class="c83e27b">Picking a validator is the one decision that affects every subsequent reward you earn, since commission and reliability compound over every epoch you stay delegated.<h3>Commission and reputation</h3>A validator's commission is deducted before rewards reach delegators, so two validators with identical uptime can hand you meaningfully different totals. Longer-running validators with a public track record are generally easier to evaluate than new ones with no history.<h3>Slashing and downtime risk</h3>A validator that goes offline or misbehaves can be penalized, and that penalty can reduce the rewards available to its delegators even though your principal itself is not typically seized under normal delegated staking.<h3>Spreading a position across validators</h3>Delegating to more than one validator trades a small amount of simplicity for reduced exposure to any single validator's downtime or commission changes, a common approach once a position grows large enough to matter. Reviewing each validator's historical uptime percentage and the number of blocks it has missed over recent weeks gives a clearer picture than its commission rate alone, since a cheap validator that frequently falls offline can still underperform a slightly costlier one with a clean record.</div></section>
-<section class="c54f0bc"><h2 class="ca1e035">Liquid Staking: An Alternative Way to Stake BNB</h2><div class="c83e27b">Direct delegation locks your BNB for the unbonding period whenever you want it back, which is the main trade-off liquid staking is built to solve. Depositing BNB into a liquid staking protocol mints a receipt token such as slisBNB, which represents your staked position plus accruing rewards and can be traded, used as collateral, or deployed elsewhere in DeFi while the underlying BNB keeps earning in the background. The concept mirrors liquid staking derivatives on other proof-of-stake networks, a pattern <a href="https://ethereum.org/en/staking/" rel="nofollow noopener" target="_blank">explained in general terms by ethereum.org</a> for staking on Ethereum. The trade-off is a small protocol fee and smart-contract risk in exchange for not having to wait out the unbonding period to access your value. Because the receipt token's exchange rate against BNB climbs as rewards accrue rather than paying out separately, you can hold it in a wallet or move it between DeFi positions without manually claiming anything, and redeeming it later still routes through the same unbonding mechanics as a direct delegation.</div></section>
-<section class="c54f0bc"><h2 class="ca1e035">Stake BNB vs Centralized Exchange Staking</h2><div class="c83e27b">Many exchanges, including <a href="https://en.wikipedia.org/wiki/Binance" rel="nofollow noopener" target="_blank">Binance</a> as described on its Wikipedia entry, offer a simplified staking product where the exchange delegates on your behalf. That convenience comes with a trade-off: your BNB sits in the exchange's custody rather than your own wallet, and you rely on the exchange's own validator choices and withdrawal terms. Self-custody delegation keeps your BNB under your own keys the entire time, lets you pick and change validators yourself, and gives you on-chain proof of every reward through <a href="https://bscscan.com/" rel="nofollow noopener" target="_blank">BscScan</a> rather than a statement inside an app. For anyone who already holds their own keys, delegating directly is generally the more transparent way to stake BNB, while exchange staking remains a lower-friction option for holders who are not yet managing a self-custody wallet. The two approaches are not mutually exclusive: some holders keep a portion on an exchange for convenience and delegate the rest directly, splitting their BNB between simplicity and the transparency of watching every reward settle on-chain.</div></section><section class="c54f0bc cb3c519" id="related"><h2 class="ca1e035">Related tools</h2><div class="c83e27b"><ul><li><a href="https://stake-wbtc.github.io/">Stake WBTC</a></li><li><a href="https://polygon-staking-calculator.github.io/">How Polygon Staking Calculator works</a></li><li><a href="https://mnt-staking.github.io/">MNT Staking guide</a></li><li><a href="https://liquidstaking.github.io/">Liquid Staking explained</a></li><li><a href="https://staking-pool.github.io/">Staking Pool</a></li></ul></div></section>
-      <details class="c3069f6"><summary class="c19e0f9">What does it mean to stake BNB?</summary><div class="cd59b5f">It means delegating your BNB to a validator on BNB Chain so the network can count it toward consensus, in exchange for a share of that validator's block rewards. Your BNB stays under your own control the entire time; delegation is a signed instruction, not a transfer of custody.</div></details>
-<details class="c3069f6"><summary class="c19e0f9">How much can I earn when I stake BNB?</summary><div class="cd59b5f">APR typically runs around 2%–4%, depending on the validator's commission and how actively it is producing blocks. Use the rewards calculator with your amount, the validator's current APY, and your intended period to get a specific estimate.</div></details>
-<details class="c3069f6"><summary class="c19e0f9">How long does unbonding take after I stake BNB?</summary><div class="cd59b5f">BNB Chain enforces an unbonding period of roughly seven days between requesting to unstake and the BNB becoming withdrawable. During that window the tokens are locked and no longer earning rewards.</div></details>
-<details class="c3069f6"><summary class="c19e0f9">What is slisBNB and how is it different from direct delegation?</summary><div class="cd59b5f">slisBNB is a liquid staking receipt token minted when you deposit BNB into a liquid staking protocol. It represents your staked position and accrues rewards automatically, but unlike direct delegation it can be traded or used in DeFi without waiting out the unbonding period.</div></details>
-<details class="c3069f6"><summary class="c19e0f9">Is it safer to stake BNB directly or through an exchange?</summary><div class="cd59b5f">Direct delegation keeps your BNB in your own wallet and lets you choose and verify the validator yourself. Exchange staking is more convenient but puts your BNB in the exchange's custody and ties your returns to its own validator choices and withdrawal rules.</div></details>
-<details class="c3069f6"><summary class="c19e0f9">Can I lose my BNB if a validator is slashed?</summary><div class="cd59b5f">Under normal delegated staking your principal is not typically seized, but a slashed or offline validator can reduce the rewards available to its delegators. Checking a validator's uptime history before delegating lowers this risk.</div></details>
-<details class="c3069f6"><summary class="c19e0f9">Can I change validators after I stake BNB?</summary><div class="cd59b5f">Yes. You can unstake from one validator and, after the unbonding period, delegate the same BNB to a different validator. Some interfaces also support re-delegating directly without a full unbonding cycle.</div></details>
-    </main>
-    <section id="sources" class="c1be7a5" aria-labelledby="sources-heading">
-      <h2 id="sources-heading" class="c0ff358">Sources</h2>
-      <ul class="c2a5a0b"><li><a class="ca4cde4" href="https://docs.bnbchain.org/" rel="nofollow noopener" target="_blank">BNB Chain documentation</a></li>
-<li><a class="ca4cde4" href="https://bscscan.com/" rel="nofollow noopener" target="_blank">BscScan block explorer</a></li>
-<li><a class="ca4cde4" href="https://en.wikipedia.org/wiki/Binance" rel="nofollow noopener" target="_blank">Binance — Wikipedia</a></li>
-<li><a class="ca4cde4" href="https://ethereum.org/en/staking/" rel="nofollow noopener" target="_blank">Staking concept — ethereum.org</a></li></ul>
-    </section>
-    <footer class="ccb5edb">
-      <span class="cde5ca3">Staking guide</span>
-      <div>Updated Nov 05, 2026</div>
-    </footer>
-  </div>
-  <script>
-    (() => {
-      const amount = document.getElementById('amount');
-      const apy = document.getElementById('apy');
-      const period = document.getElementById('period');
-      const help = document.getElementById('amount-help');
-      const received = document.getElementById('received');
-      const total = document.getElementById('total');
-      const apyout = document.getElementById('apyout');
-      const format = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      let pending;
-      function num(el, min, max) {
-        const raw = el.value.trim();
-        const ok = /^(?:\d+(?:[.,]\d{1,4})?|[.,]\d{1,4})$/.test(raw);
-        const v = ok ? Number(raw.replace(',', '.')) : NaN;
-        return (Number.isFinite(v) && v >= min && v <= max) ? v : NaN;
-      }
-      function calculate() {
-        const value = num(amount, 1, 1000000);
-        const rate = num(apy, 0, 1000);
-        amount.setAttribute('aria-invalid', String(Number.isNaN(value)));
-        apy.setAttribute('aria-invalid', String(Number.isNaN(rate)));
-        if (Number.isNaN(value) || Number.isNaN(rate)) {
-          received.textContent = '—';
-          total.textContent = '—';
-          apyout.textContent = '—';
-          help.textContent = 'Enter an amount (1–1,000,000) and an APY (0–1,000%).';
-          return;
-        }
-        const years = Number(period.value) || 1;
-        const months = Math.max(1, Math.round(years * 12));
-        const monthly = rate / 100 / 12;
-        const endBalance = value * Math.pow(1 + monthly, months);
-        received.textContent = format.format(endBalance - value);
-        total.textContent = format.format(endBalance);
-        apyout.textContent = format.format(rate) + '%';
-        help.textContent = 'Enter an amount from 1 to 1,000,000 units.';
-      }
-      amount.addEventListener('input', () => { clearTimeout(pending); pending = setTimeout(calculate, 180); });
-      apy.addEventListener('input', () => { clearTimeout(pending); pending = setTimeout(calculate, 180); });
-      amount.addEventListener('blur', () => { clearTimeout(pending); calculate(); });
-      apy.addEventListener('blur', () => { clearTimeout(pending); calculate(); });
-      period.addEventListener('change', calculate);
-      calculate();
-    })();
-  </script>
-</body>
-</html>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-cv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 6 5 5 5-5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="5" ry="2.5"/><path d="M4 7v4c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V7"/><path d="M10 15.5c.6 1.2 2.6 2 5 2 2.8 0 5-1.1 5-2.5v-4c0-1.4-2.2-2.5-5-2.5"/><path d="M20 15v4c0 1.4-2.2 2.5-5 2.5s-5-1.1-5-2.5v-2"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path d="M12 14.5v2"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5s-6 6.4-6 10.5a6 6 0 0 0 12 0c0-4.1-6-10.5-6-10.5z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 13a7.8 7.8 0 0 0 0-2l2-1.5-2-3.4-2.3 1a7.6 7.6 0 0 0-1.7-1L15 2.5h-4l-.4 2.6c-.6.3-1.2.6-1.7 1l-2.3-1-2 3.4L4.6 11a7.8 7.8 0 0 0 0 2l-2 1.5 2 3.4 2.3-1c.5.4 1.1.7 1.7 1l.4 2.6h4l.4-2.6c.6-.3 1.2-.6 1.7-1l2.3 1 2-3.4z"/></symbol>
+</defs></svg>
 
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="Stake BNB home"><img src="icon.svg" alt=""><span>Stake BNB</span></a>
+  <nav class="nlinks" aria-label="Primary">
+    <a href="#overview">What is it</a>
+    <a href="#compare">Native vs liquid</a>
+    <a href="#how">How to stake</a>
+    <a href="#fees">Fees &amp; gas</a>
+    <a href="#security">Security</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <span class="spacer"></span>
+  <a class="chain" href="/dashboard/" style="text-decoration:none"><img src="assets/bnb.svg" alt=""><span>BNB Smart Chain</span><svg class="cv" aria-hidden="true"><use href="#i-cv"/></svg></a>
+  <a class="connect" href="/dashboard/" style="text-decoration:none">Connect wallet</a>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Stake BNB</h1>
+
+    <section class="card" aria-label="Stake BNB">
+      <div class="tabs">
+        <button class="tab on" type="button">Stake</button>
+        <button class="tab" type="button">Unstake</button>
+        <button class="tab" type="button">Rewards</button>
+        <span class="sp"></span>
+        <button class="ic gear" type="button" aria-label="Settings" data-toast="Staking settings are disabled in this demo."><svg aria-hidden="true"><use href="#i-gear"/></svg></button>
+      </div>
+
+      <div class="promo promo-flow">
+        <div class="promo-txt">
+          <h2 class="promo-h">Delegate BNB to a validator</h2>
+          <p class="promo-sub">Connect your wallet, pick a validator and sign. Unbonding takes about 7 days.</p>
+        </div>
+        <ol class="flow">
+          <li><span class="fi"><img src="assets/bnb.svg" alt=""></span><b>BNB</b><small>On BNB Smart Chain</small></li>
+          <li><span class="fi on"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><b>Validator</b><small>Credit tokens track your share</small></li>
+          <li><span class="fi"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><b>Unbond</b><small>About 7 days to claim</small></li>
+        </ol>
+      </div>
+
+      <div class="cta-wrap"><a class="cta" href="/dashboard/" style="display:flex;align-items:center;justify-content:center;text-decoration:none">Stake BNB</a></div>
+    </section>
+  </section>
+
+  <section class="learn" id="learn">
+    <p class="learn-h">Learn about staking BNB</p>
+    <div class="lrow">
+      <details class="lcard" name="learn" id="overview"><summary><span>What is it</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>What it means to stake BNB</h2>
+<p>To <strong>stake BNB</strong> is to delegate your coins to a validator that helps secure BNB Smart Chain. Native staking now runs on BNB Smart Chain itself, so you delegate from the same wallet you already use for the network.</p>
+<h3>What you receive</h3>
+<p>When you delegate, you receive validator-specific stake credit tokens that represent your share of that validator's pool. Rewards accrue to the stake, so the value behind your share can grow over time. Rewards are not guaranteed and depend on the validator and the network.</p>
+<h3>Who it is for</h3>
+<p>Holders who plan to keep BNB for a while and are comfortable with an unbonding wait before they can move it again.</p></div></details>
+
+      <details class="lcard" name="learn" id="compare"><summary><span>Native vs liquid</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>Native delegation vs liquid staking</h2>
+<p>Both ways let BNB earn staking rewards. They differ in what you hold afterwards and who you rely on.</p>
+<div class="tbl"><table><caption>Native delegation vs liquid staking</caption><thead><tr><th scope="col"></th><th scope="col">Native delegation</th><th scope="col">Liquid staking</th></tr></thead><tbody><tr><th scope="row">Who you delegate to</th><td>A validator you choose</td><td>A liquid staking protocol that spreads stake</td></tr><tr><th scope="row">What you hold</th><td>Validator-specific stake credit tokens</td><td>A protocol's liquid staking token</td></tr><tr><th scope="row">Exit</th><td>Undelegate, then wait about 7 days to claim</td><td>Depends on the protocol; often a market sale or its own queue</td></tr><tr><th scope="row">Main risks</th><td>Validator slashing, commission</td><td>Smart contract risk, token price drift, protocol fees</td></tr></tbody></table></div>
+<h3>Which fits</h3>
+<p>Native delegation keeps you close to the chain and one validator. Liquid staking alternatives exist if you want a token you can trade or use elsewhere, with different trust assumptions.</p></div></details>
+
+      <details class="lcard" name="learn" id="how"><summary><span>How to stake</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>How to stake BNB</h2>
+<h3>Before you start</h3>
+<p>Use a wallet connected to BNB Smart Chain and keep a little extra BNB aside for gas. Review the validator's commission before you commit.</p>
+<h3>Step by step</h3>
+<ol>
+<li>Connect your wallet and make sure it is on BNB Smart Chain.</li>
+<li>Choose a validator and review its commission.</li>
+<li>Enter the amount of BNB to delegate.</li>
+<li>Sign the delegation transaction in your wallet; your stake credit tokens appear once it confirms.</li>
+<li>To exit later, undelegate, wait out the unbonding period of about 7 days, then claim your BNB.</li>
+</ol>
+<p>Details of the staking system are in the <a href="https://docs.bnbchain.org/" target="_blank" rel="nofollow noopener">BNB Chain docs</a>.</p></div></details>
+
+      <details class="lcard" name="learn" id="fees"><summary><span>Fees &amp; gas</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>What staking BNB costs</h2>
+<h3>Gas</h3>
+<p>Delegating, undelegating and claiming are each on-chain transactions, and gas is paid in BNB. Keep some BNB unstaked in the wallet so you can always sign.</p>
+<h3>Validator commission</h3>
+<p>Validators charge a commission on the rewards earned. It is set by each validator and can differ between them, so compare before you delegate. This interface shows it before you sign.</p>
+<h3>Unbonding is a time cost</h3>
+<p>Undelegated BNB is locked for an unbonding period of about 7 days. During that time it is not usable and does not move, so plan for it.</p></div></details>
+
+      <details class="lcard" name="learn" id="security"><summary><span>Security</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody"><h2>Staking safely</h2>
+<h3>Non-custodial by design</h3>
+<p>You connect your own wallet and sign every transaction yourself. This interface never holds your BNB or your keys.</p>
+<h3>Risks to understand</h3>
+<ul>
+<li>Slashing: if a validator misbehaves, penalties can affect the delegators of that validator, not only the operator.</li>
+<li>Lock-up: undelegating starts an unbonding period of about 7 days before you can claim.</li>
+<li>Smart contract risk: staking contracts and liquid staking alternatives can contain bugs, so risk is never zero.</li>
+<li>Check the address and network in your wallet prompt before every signature.</li>
+</ul></div></details>
+
+      <details class="lcard" name="learn" id="faq"><summary><span>FAQ</span><span class="chev" aria-hidden="true"></span></summary><div class="lbody lfaq"><h2>Stake BNB FAQ</h2>
+<h3>How do I stake BNB?</h3>
+<p>Connect a wallet on BNB Smart Chain, choose a validator, enter an amount and sign the delegation. You receive validator-specific stake credit tokens that represent your share.</p>
+<h3>Do I get rewards for staking BNB?</h3>
+<p>Rewards accrue to the stake while it is delegated, after the validator takes its commission. Amounts vary with the validator and the network, and none are guaranteed.</p>
+<h3>How long does it take to unstake BNB?</h3>
+<p>Undelegating starts an unbonding period of about 7 days. After it ends you can claim your BNB back to your wallet.</p>
+<h3>What are stake credit tokens?</h3>
+<p>They are tokens you receive when you delegate, and they represent your share of a specific validator's stake. They are tied to that validator, so they are not the same as a generic liquid staking token.</p>
+<h3>Can I lose BNB by staking?</h3>
+<p>Yes, in some cases. If a validator misbehaves, slashing can affect delegators too, so check the validator before you delegate. Smart contract risk also applies.</p>
+<h3>Which fees apply when I stake BNB?</h3>
+<p>You pay gas in BNB for each transaction, and the validator charges a commission on rewards. This interface does not hold your funds.</p></div></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot"><span>&copy; 2026 Stake BNB</span><span class="sep">&middot;</span><a href="legal.html#privacy">Privacy</a><span class="sep">&middot;</span><a href="legal.html#terms">Terms</a><span class="sep">&middot;</span><span>Non-custodial &middot; BNB Smart Chain</span></div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+var tabs=[].slice.call(document.querySelectorAll('.tab'));
+tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.classList.toggle('on',x===t);});});});
+
+var toast=document.getElementById('toast'),tT;
+function notify(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){toast.classList.remove('show');},3000);}
+[].slice.call(document.querySelectorAll('[data-toast]')).forEach(function(b){b.addEventListener('click',function(){notify(b.getAttribute('data-toast'));});});
+
+function openHash(){var id=location.hash.slice(1);if(!id)return;var c=document.getElementById(id);if(c&&c.matches&&c.matches('.lcard[name="learn"]'))c.open=true;}
+window.addEventListener('hashchange',openHash);openHash();
+[].slice.call(document.querySelectorAll('.nlinks a')).forEach(function(a){a.addEventListener('click',function(){var c=document.getElementById(a.getAttribute('href').slice(1));if(c&&c.matches('.lcard'))c.open=true;});});
+})();
+</script>
+</body></html>

@@ -1,3 +1,16 @@
 # Stake BNB
 
-Stake BNB by delegating to a BNB Chain validator and earning a share of block rewards. Compare APR, unbonding time and the slisBNB liquid alternative, then estimate rewards with the calculator.
+> Stake BNB is a non-custodial interface for delegating BNB to a validator on BNB Smart Chain. Users connect their own wallet and sign every transaction. It is an independent tool, not an official BNB Chain site.
+
+## Key facts for AI retrieval
+
+- Native BNB staking runs on BNB Smart Chain; users delegate BNB to a validator.
+- Delegating gives validator-specific stake credit tokens that represent the user's share, and rewards accrue to the stake.
+- Validators charge a commission, and gas is paid in BNB.
+- Undelegating starts an unbonding period of about 7 days before BNB can be claimed.
+- Validator misbehaviour can lead to slashing that affects delegators; liquid staking alternatives exist with different trade-offs.
+
+## Pages
+
+- Stake BNB & learn: https://stake-bnb.github.io/
+- Legal: https://stake-bnb.github.io/legal.html
